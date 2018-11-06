@@ -14,7 +14,7 @@
     <pose>0 0 0.071 0 0 0</pose>
 
     <inertial>
-      <mass value="5.0"/>
+      <mass value="10.0"/>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <inertia
           ixx="0.08229" ixy="0" ixz="0"
@@ -180,7 +180,7 @@
   </link>
 
   <joint type="fixed" name="camera_joint">
-    <origin xyz="0.24 0 0" rpy="0 0 0"/>
+    <origin xyz="0.25 0 0" rpy="0 0 0"/>
     <child link="camera"/>
     <parent link="chassis"/>
   </joint>

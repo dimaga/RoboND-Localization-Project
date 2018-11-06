@@ -26,14 +26,14 @@
     <collision name='collision'>
       <origin xyz="0 0 0" rpy="0 0 0"/> 
       <geometry>
-        <cylinder radius="0.25" length="0.1"/>
+        <cylinder radius="0.2" length="0.1"/>
       </geometry>
     </collision>
 
     <visual name='chassis_visual'>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <cylinder radius="0.25" length="0.1"/>
+        <cylinder radius="0.2" length="0.1"/>
       </geometry>
     </visual>
   </link>
@@ -68,7 +68,7 @@
   </link>
 
   <joint type="fixed" name="caster_joint">
-    <origin xyz="0.21 0 -0.05" rpy="0 0 0"/>
+    <origin xyz="0.16 0 -0.05" rpy="0 0 0"/>
     <child link="caster"/>
     <parent link="chassis"/>
     <dynamics damping="0.0" friction="0.0"/>
@@ -104,12 +104,12 @@
   </link>
   
   <joint type="continuous" name="left_wheel_hinge">
-    <origin xyz="-0.15 0.15 -0.05" rpy="0 0 0"/>
+    <origin xyz="0.0 0.15 -0.05" rpy="0 0 0"/>
     <child link="left_wheel"/>
     <parent link="chassis"/>
     <axis xyz="0 1 0" rpy="0 0 0"/>
     <limit effort="10000" velocity="1000"/>
-    <dynamics damping="1.0" friction="1.0"/>
+    <dynamics damping="0.1" friction="0.1"/>
   </joint>
 
   <link name='right_wheel'>
@@ -142,24 +142,24 @@
   </link>
 
   <joint type="continuous" name="right_wheel_hinge">
-    <origin xyz="-0.15 -0.15 -0.05" rpy="0 0 0"/>
+    <origin xyz="0.0 -0.15 -0.05" rpy="0 0 0"/>
     <child link="right_wheel"/>
     <parent link="chassis"/>
     <axis xyz="0 1 0" rpy="0 0 0"/>
     <limit effort="10000" velocity="1000"/>
-    <dynamics damping="10.0" friction="10.0"/>
+    <dynamics damping="0.1" friction="0.1"/>
   </joint>
 
   <link name='camera'>
     <pose>0 0 0 0 0 0</pose>
 
     <inertial>
-      <mass value="0.5"/>
+      <mass value="5.0"/>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <inertia
-          ixx="0.000208" ixy="0" ixz="0"
-          iyy="0.000208" iyz="0"
-          izz="0.000208"
+          ixx="0.00208" ixy="0" ixz="0"
+          iyy="0.00208" iyz="0"
+          izz="0.00208"
       />
     </inertial>
 
@@ -180,7 +180,7 @@
   </link>
 
   <joint type="fixed" name="camera_joint">
-    <origin xyz="0.25 0 0" rpy="0 0 0"/>
+    <origin xyz="0.20 0 0" rpy="0 0 0"/>
     <child link="camera"/>
     <parent link="chassis"/>
   </joint>
@@ -215,7 +215,7 @@
   </link>
 
   <joint type="fixed" name="hokuyo_joint">
-    <origin xyz="0 0 0.1" rpy="0 0 0"/>
+    <origin xyz="0 0 0.08" rpy="0 0 0"/>
     <child link="hokuyo"/>
     <parent link="chassis"/>
   </joint>

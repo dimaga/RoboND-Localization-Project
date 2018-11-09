@@ -15,6 +15,6 @@ To launch the project:
 
 or
 
-* ```roslaunch udacity_bot my_bot.launch``` will launch the environment with my robot
+* ```roslaunch udacity_bot my_world.launch``` will launch the environment with my robot
 
 ```rosrun udacity_bot navigation_goal``` will activate robot navigation towards the goal.
